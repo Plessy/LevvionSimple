@@ -4,45 +4,45 @@ using System.Collections.Generic;
 namespace LevvionSimple.Conditionals
 {
 	/// <summary>
-	/// A conditional evaluating a range for a byte.
+	/// A conditional evaluating a range for a double.
 	/// </summary>
 	/// <seealso cref="LevvionSimple.Conditionals.MultiConditional" />
-	public class ByteRange : MultiConditional
+	public class DoubleRangeConditional : MultiConditional
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="ByteRange"/> class.
+		/// Initializes a new instance of the <see cref="DoubleRangeConditional"/> class.
 		/// </summary>
-		/// <param name="id">The ID of the byte in state to check.</param>
+		/// <param name="id">The ID of the double in state to check.</param>
 		/// <param name="minvalue">The minimum value acceptable.</param>
 		/// <param name="maxvalue">The maximum value acceptable.</param>
 		/// <param name="includeendpoints">Whether or not to include the endpoints when evaluating the conditional.</param>
-		public ByteRange(string id, byte minvalue, byte maxvalue, bool includeendpoints)
+		public DoubleRangeConditional(string id, double minvalue, double maxvalue, bool includeendpoints)
 		{
 			SetRange(id, minvalue, maxvalue, includeendpoints);
 		}
 
 		/// <summary>
-		/// Initializes a new instance of the <see cref="ByteRange"/> class.
+		/// Initializes a new instance of the <see cref="DoubleRangeConditional"/> class.
 		/// </summary>
-		/// <param name="id">The ID of the byte in state to check.</param>
+		/// <param name="id">The ID of the double in state to check.</param>
 		/// <param name="minvalue">The minimum value acceptable.</param>
 		/// <param name="maxvalue">The maximum value acceptable.</param>
 		/// <param name="includeendpoints">Whether or not to include the endpoints when evaluating the conditional.</param>
 		/// <param name="action">The action to take when the evaluation passes.</param>
-		public ByteRange(string id, byte minvalue, byte maxvalue, bool includeendpoints, Action action) : base(action)
+		public DoubleRangeConditional(string id, double minvalue, double maxvalue, bool includeendpoints, Action action) : base(action)
 		{
 			SetRange(id, minvalue, maxvalue, includeendpoints);
 		}
 
 		/// <summary>
-		/// Initializes a new instance of the <see cref="ByteRange"/> class.
+		/// Initializes a new instance of the <see cref="DoubleRangeConditional"/> class.
 		/// </summary>
-		/// <param name="id">The ID of the byte in state to check.</param>
+		/// <param name="id">The ID of the double in state to check.</param>
 		/// <param name="minvalue">The minimum value acceptable.</param>
 		/// <param name="maxvalue">The maximum value acceptable.</param>
 		/// <param name="includeendpoints">Whether or not to include the endpoints when evaluating the conditional.</param>
 		/// <param name="actions">The actions to take when the evaluation passes.</param>
-		public ByteRange(string id, byte minvalue, byte maxvalue, bool includeendpoints, List<Action> actions) : base(actions)
+		public DoubleRangeConditional(string id, double minvalue, double maxvalue, bool includeendpoints, List<Action> actions) : base(actions)
 		{
 			SetRange(id, minvalue, maxvalue, includeendpoints);
 		}
@@ -50,21 +50,21 @@ namespace LevvionSimple.Conditionals
 		/// <summary>
 		/// Sets the range.
 		/// </summary>
-		/// <param name="id">The ID of the byte in state to check.</param>
+		/// <param name="id">The ID of the double in state to check.</param>
 		/// <param name="minvalue">The minimum value acceptable.</param>
 		/// <param name="maxvalue">The maximum value acceptable.</param>
 		/// <param name="includeendpoints">Whether or not to include the endpoints when evaluating the conditional.</param>
-		private void SetRange(string id, byte minvalue, byte maxvalue, bool includeendpoints)
+		private void SetRange(string id, double minvalue, double maxvalue, bool includeendpoints)
 		{
 			if (includeendpoints)
 			{
-				Add(new ByteConditional(id, minvalue, ComparisonType.GreaterThanOrEquals));
-				Add(new ByteConditional(id, maxvalue, ComparisonType.LessThanOrEquals));
+				Add(new DoubleConditional(id, minvalue, ComparisonType.GreaterThanOrEquals));
+				Add(new DoubleConditional(id, maxvalue, ComparisonType.LessThanOrEquals));
 			}
 			else
 			{
-				Add(new ByteConditional(id, minvalue, ComparisonType.GreaterThan));
-				Add(new ByteConditional(id, maxvalue, ComparisonType.LessThan));
+				Add(new DoubleConditional(id, minvalue, ComparisonType.GreaterThan));
+				Add(new DoubleConditional(id, maxvalue, ComparisonType.LessThan));
 			}
 		}
 	}

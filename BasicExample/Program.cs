@@ -20,8 +20,7 @@ namespace BasicExample
 
 			//Check multiconditional. Works if int is greater than 3, and less than 8, and also if the bool is true.
 			var multi = new MultiConditional(MultiWorked);
-			multi.Add(new IntConditional("test", 3, ComparisonType.GreaterThan));
-			multi.Add(new IntConditional("test", 8, ComparisonType.LessThan));
+			multi.Add(new IntRangeConditional("test", 3, 8, false));
 			multi.Add(new BoolConditional("test", true));
 			ai.Add(multi);
 

@@ -31,8 +31,12 @@ IntConditional: Evaluates an integer from the state.
 
 FloatConditional: Evaluates a float from the state.
 
+DoubleConditional: Evaluates a double from the state.
+
 StringConditional: Evaluates a string from the state.
 
 TimerConditional: Only works every so often depending on your target time.
 
 MultiConditional: A parent condition that can house any of the following above, used for complex statements. All conditionals must pass as true for it to return as true.
+
+ByteRangeConditional, IntRangeConditional, FloatRangeConditional, DoubleRangeConditional: Evaluates a range of values for the type noted.

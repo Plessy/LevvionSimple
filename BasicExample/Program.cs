@@ -10,7 +10,7 @@ namespace BasicExample
 		static void Main(string[] args)
 		{
 			//Create a new manager
-			var ai = new LevvionManager();
+			var ai = new LevvionManager(true);
 
 			//Check for bool.
 			ai.Add(new BoolConditional("test", true, BoolWorked));

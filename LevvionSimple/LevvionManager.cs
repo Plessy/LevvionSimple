@@ -8,10 +8,6 @@ namespace LevvionSimple
 	public class LevvionManager
 	{
 		/// <summary>
-		/// The conditionals to manage.
-		/// </summary>
-		protected List<LevvionConditional> Conditionals;
-		/// <summary>
 		/// Gets or sets the state.
 		/// </summary>
 		/// <value>
@@ -20,10 +16,23 @@ namespace LevvionSimple
 		public LevvionState State { get; protected set; }
 
 		/// <summary>
-		/// Initializes a new instance of the <see cref="LevvionManager"/> class.
+		/// The conditionals to manage.
 		/// </summary>
-		public LevvionManager()
+		protected List<LevvionConditional> Conditionals;
+
+		/// <summary>
+		/// Whether or not to allow multiple actions.
+		/// </summary>
+		protected bool AllowMultipleActions;
+
+		/// <summary>
+		/// Initializes a new instance of the <see cref="LevvionManager" /> class.
+		/// </summary>
+		/// <param name="allowmultipleactions">Whether or not to allow multiple actions per evaluation.</param>
+		public LevvionManager(bool allowmultipleactions)
 		{
+			AllowMultipleActions = allowmultipleactions;
+
 			Conditionals = new List<LevvionConditional>();
 			State = new LevvionState();
 		}
@@ -61,6 +70,11 @@ namespace LevvionSimple
 				if (conditional.Evaluate())
 				{
 					conditional.CallActions();
+
+					if (!AllowMultipleActions)
+					{
+						return;
+					}
 				}
 			}
 		}

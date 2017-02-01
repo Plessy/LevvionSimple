@@ -34,7 +34,7 @@ namespace LevvionSimple.Conditionals
 		/// <summary>
 		/// Initializes a new instance of the <see cref="MultiConditional"/> class.
 		/// </summary>
-		/// <param name="action">The action.</param>
+		/// <param name="action">The action to take when the evaluation passes.</param>
 		public MultiConditional(Action action) : base(action)
 		{
 			Conditionals = new List<LevvionConditional>();
@@ -43,8 +43,8 @@ namespace LevvionSimple.Conditionals
 		/// <summary>
 		/// Initializes a new instance of the <see cref="MultiConditional"/> class.
 		/// </summary>
-		/// <param name="conditionals">The conditionals.</param>
-		/// <param name="action">The action.</param>
+		/// <param name="conditionals">The conditionals to be evaluated.</param>
+		/// <param name="action">The action to take when the evaluation passes.</param>
 		public MultiConditional(List<LevvionConditional> conditionals, Action action) : base(action)
 		{
 			Conditionals = conditionals;
@@ -53,8 +53,8 @@ namespace LevvionSimple.Conditionals
 		/// <summary>
 		/// Initializes a new instance of the <see cref="MultiConditional"/> class.
 		/// </summary>
-		/// <param name="conditionals">The conditionals.</param>
-		/// <param name="actions">The actions.</param>
+		/// <param name="conditionals">The conditionals to be evaluated.</param>
+		/// <param name="actions">The actions to take when the evaluation passes.</param>
 		public MultiConditional(List<LevvionConditional> conditionals, List<Action> actions) : base(actions)
 		{
 			Conditionals = conditionals;
@@ -63,7 +63,7 @@ namespace LevvionSimple.Conditionals
 		/// <summary>
 		/// Initializes a new instance of the <see cref="MultiConditional"/> class.
 		/// </summary>
-		/// <param name="actions">The actions.</param>
+		/// <param name="actions">The actions to take when the evaluation passes.</param>
 		public MultiConditional(List<Action> actions) : base(actions)
 		{
 			Conditionals = new List<LevvionConditional>();

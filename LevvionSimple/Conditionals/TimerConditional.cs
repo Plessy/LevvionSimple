@@ -25,8 +25,8 @@ namespace LevvionSimple.Conditionals
 		/// <summary>
 		/// Initializes a new instance of the <see cref="TimerConditional"/> class.
 		/// </summary>
-		/// <param name="targettime">The targettime.</param>
-		/// <param name="reset">if set to <c>true</c> [reset].</param>
+		/// <param name="targettime">The time between the timer evaluating as true.</param>
+		/// <param name="reset">Whether or not the timer should reset to zero when it passes as true. If false, it will subtract current time from target time and keep going.</param>
 		public TimerConditional(float targettime, bool reset)
 		{
 			TargetTime = targettime;
@@ -36,9 +36,9 @@ namespace LevvionSimple.Conditionals
 		/// <summary>
 		/// Initializes a new instance of the <see cref="TimerConditional"/> class.
 		/// </summary>
-		/// <param name="targettime">The targettime.</param>
-		/// <param name="reset">if set to <c>true</c> [reset].</param>
-		/// <param name="action">The action.</param>
+		/// <param name="targettime">The time between the timer evaluating as true.</param>
+		/// <param name="reset">Whether or not the timer should reset to zero when it passes as true. If false, it will subtract current time from target time and keep going.</param>
+		/// <param name="action">The action to take when the evaluation passes.</param>
 		public TimerConditional(float targettime, bool reset, Action action) : base(action)
 		{
 			TargetTime = targettime;
@@ -48,9 +48,9 @@ namespace LevvionSimple.Conditionals
 		/// <summary>
 		/// Initializes a new instance of the <see cref="TimerConditional"/> class.
 		/// </summary>
-		/// <param name="targettime">The targettime.</param>
-		/// <param name="reset">if set to <c>true</c> [reset].</param>
-		/// <param name="actions">The actions.</param>
+		/// <param name="targettime">The time between the timer evaluating as true.</param>
+		/// <param name="reset">Whether or not the timer should reset to zero when it passes as true. If false, it will subtract current time from target time and keep going.</param>
+		/// <param name="actions">The actions to take when the evaluation passes.</param>
 		public TimerConditional(float targettime, bool reset, List<Action> actions) : base(actions)
 		{
 			TargetTime = targettime;

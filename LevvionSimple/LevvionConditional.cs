@@ -60,7 +60,7 @@ namespace LevvionSimple
 		/// <summary>
 		/// Initializes a new instance of the <see cref="LevvionConditional"/> class.
 		/// </summary>
-		/// <param name="action">The action.</param>
+		/// <param name="action">The action to be carried out when the conditional evaluates as true.</param>
 		public LevvionConditional(Action action)
 		{
 			AddAction(action);
@@ -69,7 +69,7 @@ namespace LevvionSimple
 		/// <summary>
 		/// Initializes a new instance of the <see cref="LevvionConditional"/> class.
 		/// </summary>
-		/// <param name="actions">The actions.</param>
+		/// <param name="actions">The list of actions to be carried out when the conditional evaluates as true..</param>
 		public LevvionConditional(List<Action> actions)
 		{
 			foreach (var action in actions)

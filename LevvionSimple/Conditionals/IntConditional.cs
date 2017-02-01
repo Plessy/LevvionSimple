@@ -10,11 +10,11 @@ namespace LevvionSimple.Conditionals
 	public class IntConditional : LevvionConditional
 	{
 		/// <summary>
-		/// The ID of the int in the state.
+		/// The ID of the integer in the state.
 		/// </summary>
 		protected string ID;
 		/// <summary>
-		/// The value of the int in the state.
+		/// The value of the integer in the state.
 		/// </summary>
 		protected int Value;
 		/// <summary>
@@ -25,9 +25,9 @@ namespace LevvionSimple.Conditionals
 		/// <summary>
 		/// Initializes a new instance of the <see cref="IntConditional"/> class.
 		/// </summary>
-		/// <param name="id">The identifier.</param>
-		/// <param name="value">The value.</param>
-		/// <param name="comparisontype">The comparisontype.</param>
+		/// <param name="id">The ID of the integer in state to check.</param>
+		/// <param name="value">The desired value of the integer in state.</param>
+		/// <param name="comparisontype">How to compare the value in state to the desired value.</param>
 		public IntConditional(string id, int value, ComparisonType comparisontype)
 		{
 			ID = id;
@@ -38,10 +38,10 @@ namespace LevvionSimple.Conditionals
 		/// <summary>
 		/// Initializes a new instance of the <see cref="IntConditional"/> class.
 		/// </summary>
-		/// <param name="id">The identifier.</param>
-		/// <param name="value">The value.</param>
-		/// <param name="comparisontype">The comparisontype.</param>
-		/// <param name="action">The action.</param>
+		/// <param name="id">The ID of the integer in state to check.</param>
+		/// <param name="value">The desired value of the integer in state.</param>
+		/// <param name="comparisontype">How to compare the value in state to the desired value.</param>
+		/// <param name="action">The action to take when the evaluation passes.</param>
 		public IntConditional(string id, int value, ComparisonType comparisontype, Action action) : base(action)
 		{
 			ID = id;
@@ -52,10 +52,10 @@ namespace LevvionSimple.Conditionals
 		/// <summary>
 		/// Initializes a new instance of the <see cref="IntConditional"/> class.
 		/// </summary>
-		/// <param name="id">The identifier.</param>
-		/// <param name="value">The value.</param>
-		/// <param name="comparisontype">The comparisontype.</param>
-		/// <param name="actions">The actions.</param>
+		/// <param name="id">The ID of the integer in state to check.</param>
+		/// <param name="value">The desired value of the integer in state.</param>
+		/// <param name="comparisontype">How to compare the value in state to the desired value.</param>
+		/// <param name="actions">The actions to take when the evaluation passes.</param>
 		public IntConditional(string id, int value, ComparisonType comparisontype, List<Action> actions) : base(actions)
 		{
 			ID = id;

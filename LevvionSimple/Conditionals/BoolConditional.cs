@@ -21,8 +21,8 @@ namespace LevvionSimple.Conditionals
 		/// <summary>
 		/// Initializes a new instance of the <see cref="BoolConditional"/> class.
 		/// </summary>
-		/// <param name="id">The identifier.</param>
-		/// <param name="value">if set to <c>true</c> [value].</param>
+		/// <param name="id">The ID of the boolean in state to check.</param>
+		/// <param name="value">The desired value of the boolean in state.</param>
 		public BoolConditional(string id, bool value)
 		{
 			ID = id;
@@ -32,9 +32,9 @@ namespace LevvionSimple.Conditionals
 		/// <summary>
 		/// Initializes a new instance of the <see cref="BoolConditional"/> class.
 		/// </summary>
-		/// <param name="id">The identifier.</param>
-		/// <param name="value">if set to <c>true</c> [value].</param>
-		/// <param name="action">The action.</param>
+		/// <param name="id">The ID of the boolean in state to check.</param>
+		/// <param name="value">The desired value of the boolean in state.</param>
+		/// <param name="action">The action to take when the evaluation passes.</param>
 		public BoolConditional(string id, bool value, Action action) : base(action)
 		{
 			ID = id;
@@ -44,9 +44,9 @@ namespace LevvionSimple.Conditionals
 		/// <summary>
 		/// Initializes a new instance of the <see cref="BoolConditional"/> class.
 		/// </summary>
-		/// <param name="id">The identifier.</param>
-		/// <param name="value">if set to <c>true</c> [value].</param>
-		/// <param name="actions">The actions.</param>
+		/// <param name="id">The ID of the boolean in state to check.</param>
+		/// <param name="value">The desired value of the boolean in state.</param>
+		/// <param name="actions">The actions to take when the evaluation passes.</param>
 		public BoolConditional(string id, bool value, List<Action> actions) : base(actions)
 		{
 			ID = id;

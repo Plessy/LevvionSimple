@@ -25,9 +25,9 @@ namespace LevvionSimple.Conditionals
 		/// <summary>
 		/// Initializes a new instance of the <see cref="ByteConditional"/> class.
 		/// </summary>
-		/// <param name="id">The identifier.</param>
-		/// <param name="value">The value.</param>
-		/// <param name="comparisontype">The comparisontype.</param>
+		/// <param name="id">The ID of the byte in state to check.</param>
+		/// <param name="value">The desired value of the byte in state.</param>
+		/// <param name="comparisontype">How to compare the value in state to the desired value.</param>
 		public ByteConditional(string id, byte value, ComparisonType comparisontype)
 		{
 			ID = id;
@@ -38,10 +38,10 @@ namespace LevvionSimple.Conditionals
 		/// <summary>
 		/// Initializes a new instance of the <see cref="ByteConditional"/> class.
 		/// </summary>
-		/// <param name="id">The identifier.</param>
-		/// <param name="value">The value.</param>
-		/// <param name="comparisontype">The comparisontype.</param>
-		/// <param name="action">The action.</param>
+		/// <param name="id">The ID of the byte in state to check.</param>
+		/// <param name="value">The desired value of the byte in state.</param>
+		/// <param name="comparisontype">How to compare the value in state to the desired value.</param>
+		/// <param name="action">The action to take when the evaluation passes.</param>
 		public ByteConditional(string id, byte value, ComparisonType comparisontype, Action action) : base(action)
 		{
 			ID = id;
@@ -52,10 +52,10 @@ namespace LevvionSimple.Conditionals
 		/// <summary>
 		/// Initializes a new instance of the <see cref="ByteConditional"/> class.
 		/// </summary>
-		/// <param name="id">The identifier.</param>
-		/// <param name="value">The value.</param>
-		/// <param name="comparisontype">The comparisontype.</param>
-		/// <param name="actions">The actions.</param>
+		/// <param name="id">The ID of the byte in state to check.</param>
+		/// <param name="value">The desired value of the byte in state.</param>
+		/// <param name="comparisontype">How to compare the value in state to the desired value.</param>
+		/// <param name="actions">The actions to take when the evaluation passes.</param>
 		public ByteConditional(string id, byte value, ComparisonType comparisontype, List<Action> actions) : base(actions)
 		{
 			ID = id;

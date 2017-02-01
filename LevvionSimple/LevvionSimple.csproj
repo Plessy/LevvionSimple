@@ -42,8 +42,13 @@
   <ItemGroup>
     <Compile Include="Conditionals\BoolConditional.cs" />
     <Compile Include="Conditionals\ByteConditional.cs" />
+    <Compile Include="Conditionals\ByteRange.cs" />
+    <Compile Include="Conditionals\DoubleConditional.cs" />
+    <Compile Include="Conditionals\DoubleRange.cs" />
     <Compile Include="Conditionals\FloatConditional.cs" />
+    <Compile Include="Conditionals\FloatRange.cs" />
     <Compile Include="Conditionals\IntConditional.cs" />
+    <Compile Include="Conditionals\IntRange.cs" />
     <Compile Include="Conditionals\MultiConditional.cs" />
     <Compile Include="Conditionals\StringConditional.cs" />
     <Compile Include="Conditionals\TimerConditional.cs" />

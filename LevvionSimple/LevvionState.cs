@@ -28,9 +28,15 @@ namespace LevvionSimple
 		private Dictionary<string, float> _floats;
 
 		/// <summary>
+		/// The _doubles
+		/// </summary>
+		private Dictionary<string, double> _doubles;
+
+		/// <summary>
 		/// The _strings
 		/// </summary>
 		private Dictionary<string, string> _strings;
+
 
 		/// <summary>
 		/// Initializes a new instance of the <see cref="LevvionState"/> class.
@@ -41,6 +47,7 @@ namespace LevvionSimple
 			_bytes = new Dictionary<string, byte>();
 			_ints = new Dictionary<string, int>();
 			_floats = new Dictionary<string, float>();
+			_doubles = new Dictionary<string, double>();
 			_strings = new Dictionary<string, string>();
 		}
 
@@ -86,6 +93,17 @@ namespace LevvionSimple
 		{
 			_floats.Remove(id);
 			_floats.Add(id, value);
+		}
+
+		/// <summary>
+		/// Sets a double value.
+		/// </summary>
+		/// <param name="id">The identifier.</param>
+		/// <param name="value">The value.</param>
+		public void SetDouble(string id, double value)
+		{
+			_doubles.Remove(id);
+			_doubles.Add(id, value);
 		}
 
 		/// <summary>
@@ -158,7 +176,22 @@ namespace LevvionSimple
 
 			return 0;
 		}
-		
+
+		/// <summary>
+		/// Gets a double by ID. Default value is 0.
+		/// </summary>
+		/// <param name="id">The identifier.</param>
+		/// <returns></returns>
+		public double GetDouble(string id)
+		{
+			if (_doubles.ContainsKey(id))
+			{
+				return _doubles[id];
+			}
+
+			return 0;
+		}
+
 		/// <summary>
 		/// Gets a string by ID. Default value is "".
 		/// </summary>

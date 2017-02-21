@@ -112,7 +112,11 @@ namespace LevvionSimple
 		/// </summary>
 		public void CallActions()
 		{
-			Actions?.Invoke();
+			//Rolled this back for Unity support instead of Actions?.Invoke();
+			if (Actions != null)
+			{
+				Actions();
+			}
 		}
 		
 		/// <summary>

@@ -21,40 +21,56 @@ namespace LevvionSimple.Conditionals
 		/// Whether or not to reset the time to 0 upon activation.
 		/// </summary>
 		protected bool Reset;
+		/// <summary>
+		/// Ensures the timer is global.
+		/// </summary>
+		protected bool GlobalTimer;
 
 		/// <summary>
-		/// Initializes a new instance of the <see cref="TimerConditional"/> class.
+		/// Initializes a new instance of the <see cref="TimerConditional" /> class.
 		/// </summary>
+		/// <param name="initialoffset">The initial time to set the timer to.</param>
 		/// <param name="targettime">The time between the timer evaluating as true.</param>
 		/// <param name="reset">Whether or not the timer should reset to zero when it passes as true. If false, it will subtract current time from target time and keep going.</param>
-		public TimerConditional(float targettime, bool reset)
+		/// <param name="globaltimer">Whether or not to keep the timer as global.</param>
+		public TimerConditional(float initialoffset, float targettime, bool reset, bool globaltimer)
 		{
+			CurrentTime = initialoffset;
 			TargetTime = targettime;
 			Reset = reset;
+			GlobalTimer = globaltimer;
 		}
 
 		/// <summary>
 		/// Initializes a new instance of the <see cref="TimerConditional"/> class.
 		/// </summary>
+		/// <param name="initialoffset">The initial time to set the timer to.</param>
 		/// <param name="targettime">The time between the timer evaluating as true.</param>
 		/// <param name="reset">Whether or not the timer should reset to zero when it passes as true. If false, it will subtract current time from target time and keep going.</param>
 		/// <param name="action">The action to take when the evaluation passes.</param>
-		public TimerConditional(float targettime, bool reset, Action action) : base(action)
+		/// <param name="globaltimer">Whether or not to keep the timer as global.</param>
+		public TimerConditional(float initialoffset, float targettime, bool reset, bool globaltimer, Action action) : base(action)
 		{
+			CurrentTime = initialoffset;
 			TargetTime = targettime;
 			Reset = reset;
+			GlobalTimer = globaltimer;
 		}
 
 		/// <summary>
-		/// Initializes a new instance of the <see cref="TimerConditional"/> class.
+		/// Initializes a new instance of the <see cref="TimerConditional" /> class.
 		/// </summary>
+		/// <param name="initialoffset">The initial time to set the timer to.</param>
 		/// <param name="targettime">The time between the timer evaluating as true.</param>
 		/// <param name="reset">Whether or not the timer should reset to zero when it passes as true. If false, it will subtract current time from target time and keep going.</param>
 		/// <param name="actions">The actions to take when the evaluation passes.</param>
-		public TimerConditional(float targettime, bool reset, List<Action> actions) : base(actions)
+		/// <param name="globaltimer">Whether or not to keep the timer as global.</param>
+		public TimerConditional(float initialoffset, float targettime, bool reset, bool globaltimer, List<Action> actions) : base(actions)
 		{
+			CurrentTime = initialoffset;
 			TargetTime = targettime;
 			Reset = reset;
+			GlobalTimer = globaltimer;
 		}
 
 		/// <summary>
@@ -71,7 +87,17 @@ namespace LevvionSimple.Conditionals
 				}
 				else
 				{
-					CurrentTime -= TargetTime;
+					if (GlobalTimer)
+					{
+						while (CurrentTime > TargetTime)
+						{
+							CurrentTime -= TargetTime;
+						}
+					}
+					else
+					{
+						CurrentTime -= TargetTime;
+					}
 				}
 
 				return true;

@@ -25,7 +25,7 @@ namespace BasicExample
 			ai.Add(multi);
 
 			//Check timer
-			ai.Add(new TimerConditional(3, true, TimerWorked));
+			ai.Add(new TimerConditional(0, 3, true, false, TimerWorked));
 
 			//Run the loop now
 			int frame = 0;
